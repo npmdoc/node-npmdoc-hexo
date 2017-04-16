@@ -51,7 +51,7 @@
 
         href="https://hexo.io/"
 
-    >hexo (v3.2.2)</a>
+    >hexo (v3.3.1)</a>
 </h1>
 <h4>A fast, simple & powerful blog framework, powered by Node.js.</h4>
 <div class="apidocSectionDiv"><a
@@ -63,8 +63,26 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.hexo.hexo">
+            function <span class="apidocSignatureSpan"></span>hexo
+            <span class="apidocSignatureSpan">(base, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.hexo.super_">
             function <span class="apidocSignatureSpan">hexo.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hexo.toString">
+            function <span class="apidocSignatureSpan">hexo.</span>toString
             <span class="apidocSignatureSpan">()</span>
             </a>
 
@@ -97,6 +115,87 @@
 
 
     <h2>
+        <a href="#apidoc.element.hexo.hexo" id="apidoc.element.hexo.hexo">
+        function <span class="apidocSignatureSpan"></span>hexo
+        <span class="apidocSignatureSpan">(base, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Hexo(base, args) {
+  base = base || process.cwd();
+  args = args || {};
+
+  EventEmitter.call(this);
+
+  this.base_dir = base + sep;
+  this.public_dir = pathFn.join(base, &#x27;public&#x27;) + sep;
+  this.source_dir = pathFn.join(base, &#x27;source&#x27;) + sep;
+  this.plugin_dir = pathFn.join(base, &#x27;node_modules&#x27;) + sep;
+  this.script_dir = pathFn.join(base, &#x27;scripts&#x27;) + sep;
+  this.scaffold_dir = pathFn.join(base, &#x27;scaffolds&#x27;) + sep;
+  this.theme_dir = pathFn.join(base, &#x27;themes&#x27;, defaultConfig.theme) + sep;
+  this.theme_script_dir = pathFn.join(this.theme_dir, &#x27;scripts&#x27;) + sep;
+
+  this.env = {
+    args: args,
+    debug: Boolean(args.debug),
+    safe: Boolean(args.safe),
+    silent: Boolean(args.silent),
+    env: process.env.NODE_ENV || &#x27;development&#x27;,
+    version: pkg.version,
+    init: false
+  };
+
+  var multiConfigPath = require(&#x27;./multi_config_path&#x27;)(this);
+  this.config_path = args.config ? multiConfigPath(base, args.config)
+                                 : pathFn.join(base, &#x27;_config.yml&#x27;);
+
+  this.extend = {
+    console: new extend.Console(),
+    deployer: new extend.Deployer(),
+    filter: new extend.Filter(),
+    generator: new extend.Generator(),
+    helper: new extend.Helper(),
+    migrator: new extend.Migrator(),
+    processor: new extend.Processor(),
+    renderer: new extend.Renderer(),
+    tag: new extend.Tag()
+  };
+
+  this.config = _.cloneDeep(defaultConfig);
+
+  this.log = logger(this.env);
+
+  this.render = new Render(this);
+
+  this.route = new Router();
+
+  this.post = new Post(this);
+
+  this.scaffold = new Scaffold(this);
+
+  this._dbLoaded = false;
+
+  this._isGenerating = false;
+
+  this.database = new Database({
+    version: dbVersion,
+    path: pathFn.join(base, &#x27;db.json&#x27;)
+  });
+
+  registerModels(this);
+
+  this.source = new Source(this);
+  this.theme = new Theme(this);
+  this.locals = new Locals(this);
+  this._bindLocals();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.hexo.super_" id="apidoc.element.hexo.super_">
         function <span class="apidocSignatureSpan">hexo.</span>super_
         <span class="apidocSignatureSpan">()</span>
@@ -105,6 +204,21 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
   EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hexo.toString" id="apidoc.element.hexo.toString">
+        function <span class="apidocSignatureSpan">hexo.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return toString;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>

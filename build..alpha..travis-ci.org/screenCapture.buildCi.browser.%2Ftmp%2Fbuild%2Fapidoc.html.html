@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://hexo.io/"
-
-    >hexo (v3.3.1)</a>
+    <a href="https://hexo.io/">hexo (v3.3.1)</a>
 </h1>
-<h4>A fast, simple & powerful blog framework, powered by Node.js.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<h4>A fast, simple &amp; powerful blog framework, powered by Node.js.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.hexo">module hexo</a><ol>
 
@@ -128,27 +121,27 @@
   EventEmitter.call(this);
 
   this.base_dir = base + sep;
-  this.public_dir = pathFn.join(base, &#x27;public&#x27;) + sep;
-  this.source_dir = pathFn.join(base, &#x27;source&#x27;) + sep;
-  this.plugin_dir = pathFn.join(base, &#x27;node_modules&#x27;) + sep;
-  this.script_dir = pathFn.join(base, &#x27;scripts&#x27;) + sep;
-  this.scaffold_dir = pathFn.join(base, &#x27;scaffolds&#x27;) + sep;
-  this.theme_dir = pathFn.join(base, &#x27;themes&#x27;, defaultConfig.theme) + sep;
-  this.theme_script_dir = pathFn.join(this.theme_dir, &#x27;scripts&#x27;) + sep;
+  this.public_dir = pathFn.join(base, 'public') + sep;
+  this.source_dir = pathFn.join(base, 'source') + sep;
+  this.plugin_dir = pathFn.join(base, 'node_modules') + sep;
+  this.script_dir = pathFn.join(base, 'scripts') + sep;
+  this.scaffold_dir = pathFn.join(base, 'scaffolds') + sep;
+  this.theme_dir = pathFn.join(base, 'themes', defaultConfig.theme) + sep;
+  this.theme_script_dir = pathFn.join(this.theme_dir, 'scripts') + sep;
 
   this.env = {
     args: args,
     debug: Boolean(args.debug),
     safe: Boolean(args.safe),
     silent: Boolean(args.silent),
-    env: process.env.NODE_ENV || &#x27;development&#x27;,
+    env: process.env.NODE_ENV || 'development',
     version: pkg.version,
     init: false
   };
 
-  var multiConfigPath = require(&#x27;./multi_config_path&#x27;)(this);
+  var multiConfigPath = require('./multi_config_path')(this);
   this.config_path = args.config ? multiConfigPath(base, args.config)
-                                 : pathFn.join(base, &#x27;_config.yml&#x27;);
+                                 : pathFn.join(base, '_config.yml');
 
   this.extend = {
     console: new extend.Console(),
@@ -180,7 +173,7 @@
 
   this.database = new Database({
     version: dbVersion,
-    path: pathFn.join(base, &#x27;db.json&#x27;)
+    path: pathFn.join(base, 'db.json')
   });
 
   registerModels(this);
@@ -238,3 +231,4 @@
     ]
 </div>
 </div>
+</body></html>
