@@ -1,7 +1,12 @@
-# api documentation for  [hexo (v3.3.1)](https://hexo.io/)  [![npm package](https://img.shields.io/npm/v/npmdoc-hexo.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hexo) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hexo.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hexo)
+# npmdoc-hexo
+
+#### api documentation for  [hexo (v3.3.1)](https://hexo.io/)  [![npm package](https://img.shields.io/npm/v/npmdoc-hexo.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hexo) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hexo.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hexo)
+
 #### A fast, simple & powerful blog framework, powered by Node.js.
 
 [![NPM](https://nodei.co/npm/hexo.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/hexo)
+
+- [https://npmdoc.github.io/node-npmdoc-hexo/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-hexo/build/apidoc.html)
 
 [![apidoc](https://npmdoc.github.io/node-npmdoc-hexo/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-hexo/build/apidoc.html)
 
@@ -109,124 +114,6 @@
     },
     "version": "3.3.1"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module hexo](#apidoc.module.hexo)
-1.  [function <span class="apidocSignatureSpan"></span>hexo (base, args)](#apidoc.element.hexo.hexo)
-1.  [function <span class="apidocSignatureSpan">hexo.</span>super_ ()](#apidoc.element.hexo.super_)
-1.  [function <span class="apidocSignatureSpan">hexo.</span>toString ()](#apidoc.element.hexo.toString)
-1.  string <span class="apidocSignatureSpan">hexo.</span>core_dir
-1.  string <span class="apidocSignatureSpan">hexo.</span>lib_dir
-1.  string <span class="apidocSignatureSpan">hexo.</span>version
-
-
-
-# <a name="apidoc.module.hexo"></a>[module hexo](#apidoc.module.hexo)
-
-#### <a name="apidoc.element.hexo.hexo"></a>[function <span class="apidocSignatureSpan"></span>hexo (base, args)](#apidoc.element.hexo.hexo)
-- description and source-code
-```javascript
-function Hexo(base, args) {
-  base = base || process.cwd();
-  args = args || {};
-
-  EventEmitter.call(this);
-
-  this.base_dir = base + sep;
-  this.public_dir = pathFn.join(base, 'public') + sep;
-  this.source_dir = pathFn.join(base, 'source') + sep;
-  this.plugin_dir = pathFn.join(base, 'node_modules') + sep;
-  this.script_dir = pathFn.join(base, 'scripts') + sep;
-  this.scaffold_dir = pathFn.join(base, 'scaffolds') + sep;
-  this.theme_dir = pathFn.join(base, 'themes', defaultConfig.theme) + sep;
-  this.theme_script_dir = pathFn.join(this.theme_dir, 'scripts') + sep;
-
-  this.env = {
-    args: args,
-    debug: Boolean(args.debug),
-    safe: Boolean(args.safe),
-    silent: Boolean(args.silent),
-    env: process.env.NODE_ENV || 'development',
-    version: pkg.version,
-    init: false
-  };
-
-  var multiConfigPath = require('./multi_config_path')(this);
-  this.config_path = args.config ? multiConfigPath(base, args.config)
-                                 : pathFn.join(base, '_config.yml');
-
-  this.extend = {
-    console: new extend.Console(),
-    deployer: new extend.Deployer(),
-    filter: new extend.Filter(),
-    generator: new extend.Generator(),
-    helper: new extend.Helper(),
-    migrator: new extend.Migrator(),
-    processor: new extend.Processor(),
-    renderer: new extend.Renderer(),
-    tag: new extend.Tag()
-  };
-
-  this.config = _.cloneDeep(defaultConfig);
-
-  this.log = logger(this.env);
-
-  this.render = new Render(this);
-
-  this.route = new Router();
-
-  this.post = new Post(this);
-
-  this.scaffold = new Scaffold(this);
-
-  this._dbLoaded = false;
-
-  this._isGenerating = false;
-
-  this.database = new Database({
-    version: dbVersion,
-    path: pathFn.join(base, 'db.json')
-  });
-
-  registerModels(this);
-
-  this.source = new Source(this);
-  this.theme = new Theme(this);
-  this.locals = new Locals(this);
-  this._bindLocals();
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.hexo.super_"></a>[function <span class="apidocSignatureSpan">hexo.</span>super_ ()](#apidoc.element.hexo.super_)
-- description and source-code
-```javascript
-function EventEmitter() {
-  EventEmitter.init.call(this);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.hexo.toString"></a>[function <span class="apidocSignatureSpan">hexo.</span>toString ()](#apidoc.element.hexo.toString)
-- description and source-code
-```javascript
-toString = function () {
-    return toString;
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
