@@ -63,7 +63,7 @@
 <tspan x="10" y="970">  │   │ ├─┬ form-data@2.1.4 </tspan>
 <tspan x="10" y="986">  │   │ │ └── asynckit@0.4.0 </tspan>
 <tspan x="10" y="1002">  │   │ ├─┬ har-validator@4.2.1 </tspan>
-<tspan x="10" y="1018">  │   │ │ ├─┬ ajv@4.11.6 </tspan>
+<tspan x="10" y="1018">  │   │ │ ├─┬ ajv@4.11.7 </tspan>
 <tspan x="10" y="1034">  │   │ │ │ ├── co@4.6.0 </tspan>
 <tspan x="10" y="1050">  │   │ │ │ └─┬ json-stable-stringify@1.0.1 </tspan>
 <tspan x="10" y="1066">  │   │ │ │   └── jsonify@0.0.0 </tspan>
@@ -124,7 +124,7 @@
 <tspan x="10" y="1946">  │ │ │ ├── arrify@1.0.1 </tspan>
 <tspan x="10" y="1962">  │ │ │ └─┬ micromatch@2.3.11 </tspan>
 <tspan x="10" y="1978">  │ │ │   ├─┬ arr-diff@2.0.0 </tspan>
-<tspan x="10" y="1994">  │ │ │   │ └── arr-flatten@1.0.2 </tspan>
+<tspan x="10" y="1994">  │ │ │   │ └── arr-flatten@1.0.3 </tspan>
 <tspan x="10" y="2010">  │ │ │   ├── array-unique@0.2.1 </tspan>
 <tspan x="10" y="2026">  │ │ │   ├─┬ braces@1.8.5 </tspan>
 <tspan x="10" y="2042">  │ │ │   │ ├─┬ expand-range@1.8.2 </tspan>
@@ -198,7 +198,7 @@
 <tspan x="10" y="3130">  │ │ │ └── yallist@2.1.2 </tspan>
 <tspan x="10" y="3146">  │ │ └─┬ which@1.2.14 </tspan>
 <tspan x="10" y="3162">  │ │   └── isexe@2.0.0 </tspan>
-<tspan x="10" y="3178">  │ ├── highlight.js@9.10.0 </tspan>
+<tspan x="10" y="3178">  │ ├── highlight.js@9.11.0 </tspan>
 <tspan x="10" y="3194">  │ ├── html-entities@1.2.0 </tspan>
 <tspan x="10" y="3210">  │ └── striptags@2.2.1 </tspan>
 <tspan x="10" y="3226">  ├─┬ js-yaml@3.8.3 </tspan>
